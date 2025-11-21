@@ -4,7 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.LoginPage;
 import pages.ProductsPage;
-import pages.CartPage;
 import utils.DriverFactory;
 import utils.ExcelUtils;
 import org.openqa.selenium.WebDriver;
@@ -30,30 +29,23 @@ public class AddToCartTest {
         LoginPage login = new LoginPage(driver);
         ProductsPage products = new ProductsPage(driver);
 
-//        CartPage cart = new CartPage(driver);
-//        login.setUsername("standard_user");
-//        login.setPassword("secret_sauce");
-
         login.setUsername(username.trim());
         login.setPassword(password.trim());
         login.clickLogin();
+        /* debug */
         System.out.println("Current URL after login: " + driver.getCurrentUrl());
 
-        // VALIDASI LOCKED
         if (username.equals("locked_out_user")) {
             Assert.assertTrue(login.getErrorMessage().contains("locked"));
-            return; // jangan lanjut addToCart
+            return;
         }
 
-        // VALIDASI LOGIN SUKSES UNTUK USER NORMAL
         Assert.assertTrue(
                 driver.getCurrentUrl().contains("inventory.html"),
                 "Login FAILED - cannot find Products Page"
         );
 
-
-        // support itemName dynamically:
-        if (itemName.equalsIgnoreCase("backpack")) {
+        if (itemName.toLowerCase().contains("backpack")) {
             products.addBackpackToCart();
         }
 
