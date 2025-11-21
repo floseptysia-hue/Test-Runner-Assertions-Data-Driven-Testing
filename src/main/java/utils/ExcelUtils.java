@@ -26,11 +26,11 @@ public class ExcelUtils {
     }
 
     public int getRowCount() {
-        return sheet.getPhysicalNumberOfRows();
+        return sheet.getLastRowNum() + 1;
     }
 
     public int getColumnCount() {
-        return sheet.getRow(0).getPhysicalNumberOfCells();
+        return sheet.getRow(0).getLastCellNum();
     }
 
     public String getCellData(int rowNum, int colNum) {

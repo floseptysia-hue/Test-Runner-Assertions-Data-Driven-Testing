@@ -28,6 +28,8 @@ public class LoginTest {
     public void testLogin(String username, String password) {
         LoginPage login = new LoginPage(driver);
 //        ProductsPage products = new ProductsPage(driver);
+        System.out.println("username : "+ username.trim());
+        System.out.println("password : "+ password.trim());
 
         login.setUsername(username);
         login.setPassword(password);

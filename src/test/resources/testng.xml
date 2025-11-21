@@ -3,10 +3,10 @@
     <listeners>
         <listener class-name="listeners.TestListener"/>
     </listeners>
-
     <test name="Sauce Tests">
         <classes>
             <class name="testcases.LoginTest"/>
+            <class name="testcases.AddToCartTest"/>
         </classes>
     </test>
 
