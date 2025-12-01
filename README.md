@@ -1,6 +1,6 @@
 # Automation Testing Project – Assertions, Validations & Data-Driven Test
 
-Project ini dibuat sebagai bagian dari assignment untuk membangun automation testing dengan fokus pada:
+Project ini dibuat untuk membangun automation testing dengan fokus pada:
 
 - Assertions & validation pada test case
 - Data-driven testing menggunakan file Excel
